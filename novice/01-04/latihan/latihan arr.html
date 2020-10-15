@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Objek & Array</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // membuat array
+        var products = ["Mobil", "Motor", "Pesawat", "Kereta", "Kapal Laut"];
+
+        // menambahkan tv ke dalam array products
+        products.push("Pesawat");
+
+        // menapilkan isi array
+        document.write("pesawat akan tiba pada pukul 12:30 WIB");
+
+        let arrayLike = {
+    0: "Mobil",
+    1: "Motor",
+    2: "Pesawat",
+    3: "Kereta",
+    4: "Kapal Laut",
+    length: 4-1
+};
+let arr = Array.from(arrayLike);
+alert(arr.pop())
+    </script>
+</body>
+</html>
