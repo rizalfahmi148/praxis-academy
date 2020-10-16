@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan arr4</title>
+</head>
+<body>
+    <script type="text/javascript">
+    let range = {
+    from: 1,
+    to: 5
+  };
+  // 1. panggilan ke untuk..dari awalnya menyebut ini
+    range[Symbol.iterator] = function() {
+
+    //     ini mengembalikan objek iterator:
+    // 2. Maju, for..of hanya berfungsi dengan iterator ini, meminta nilai berikutnya
+    return {
+      current: this.from,
+      last: this.to,
+  
+      // 3. next () dipanggil pada setiap iterasi oleh for..of loop
+      next() {
+        //4. itu harus mengembalikan nilai sebagai objek {selesai: .., nilai: ...}
+        if (this.current <= this.last) {
+          return { done: false, value: this.current++ };
+        } else {
+          return { done: true };
+        }
+      }
+    };
+  };
+  
+  // sekarang berhasil!
+    for (let num of range) {
+    alert(num); // 1, kemudian 2, 3, 4, 5
+  }
+    </script>
+    
+</body>
+</html>
+
+    </script>    
+</body>
+</html>

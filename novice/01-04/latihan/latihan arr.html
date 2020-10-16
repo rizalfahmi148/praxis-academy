@@ -7,23 +7,33 @@
     <script type="text/javascript">
         // membuat array
         var products = ["Mobil", "Motor", "Pesawat", "Kereta", "Kapal Laut"];
+        products.pop();
+        console.log(products);
+
+        var cycle = {
+        type : "vespa",
+        model : "150",
+        color : "green"
+    };
+    console.log(cycle.model);
+        
 
         // menambahkan tv ke dalam array products
-        products.push("Pesawat");
+        // products.push("motor");
 
         // menapilkan isi array
-        document.write("pesawat akan tiba pada pukul 12:30 WIB");
+//         document.write("pesawat akan tiba pada pukul 12:30 WIB");
 
-        let arrayLike = {
-    0: "Mobil",
-    1: "Motor",
-    2: "Pesawat",
-    3: "Kereta",
-    4: "Kapal Laut",
-    length: 4-1
-};
-let arr = Array.from(arrayLike);
-alert(arr.pop())
+//         let arrayLike = {
+//     0: "Mobil",
+//     1: "Motor",
+//     2: "Pesawat",
+//     3: "Kereta",
+//     4: "Kapal Laut",
+//     length: 4-2
+// };
+// let arr = Array.from(arrayLike);
+// alert(arr.pop())
     </script>
 </body>
 </html>
