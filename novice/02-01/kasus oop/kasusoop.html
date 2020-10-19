@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Oriented Programming</title>
+</head>
+<body>
+    <script>
+        let zoo = function(){};
+        zoo.prototype.meet = function(){
+            console.log("zoo where animals are protected.");
+        };
+        
+        let mammals = function(){};
+        mammals.prototype = new zoo();  //Mamalia mewarisi dari Hewan
+        mammals.prototype.giveBirth = function() {
+            console.log("they are conserving endangered animals.");
+        };
+
+        let giraffe = new mammals();   //Membuat contoh jenis Mamalia
+        giraffe.meet();                //jerapah dapat menggunakan metode warisan dari Hewan
+        giraffe.giveBirth();
+
+        console.log(giraffe instanceof mammals);
+        console.log(giraffe instanceof zoo);
+
+
+
+    </script>
+    
+</body>
+</html>
