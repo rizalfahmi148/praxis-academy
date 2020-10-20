@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan ClassOop</title>
+</head>
+<body>
+    <script>
+        class jeans {
+            constructor(model, color, price) {
+                this.model= model;
+                this.color= color;
+                this.price= price;
+
+            }
+            getname() {
+                    return this.model + " " + this.color + " " + this.price;
+                }
+
+        }
+        let whole = new jeans ("slimfit", "blue", "1999");
+
+        console.log(whole.getname());
+
+    </script>
+    
+</body>
+</html>

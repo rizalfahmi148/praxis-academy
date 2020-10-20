@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasus Class Oop</title>
+</head>
+<body>
+    <script>
+        class Cat {
+            constructor(tiredness, hunger, lonliness, happiness){
+                this.tiredness = tiredness;
+                this.hunger = hunger;
+                this.lonliness = lonliness;
+                this.happiness = happiness;
+            }
+            feed(value) {
+                this.tiredness -= value;
+                this.happiness += value;
+                return this.tiredness + " " + this.hunger + " " + this.lonliness;
+            }
+
+            sleep(value) {
+                this.hunger -= value;
+                thi.happiness += value;
+                return this.hunger + " " + this.happiness + " " + lonliness;
+            }
+
+            pet(value) {
+                this.happiness -= value;
+                this.lonliness += value;
+                return this.lonliness + " " + this.hunger + " " + this.happiness;
+            }
+
+        }
+
+            let cat = new Cat(50, 50, 50, 50);
+            document.write(cat.pet(10))
+    </script>
+    
+</body>
+</html>
