@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan</title>
+</head>
+<body>
+    <script>
+        function introduce(greeting) {
+            return function(nama) {
+                return function(matod) {
+                    return greeting + nama + "from" + matod;
+                }
+            }
+        }
+        let pagi = introduce("Selamat Pagi");
+        let sore = introduce("Selamat Sore");
+        let malam = introduce("Selamat Mlam");
+
+        let popeye = pagi("Popeye")("Captain");
+        let olive = malam("Olive")("Goodlooking");
+
+        document.write(popeye);
+        document.write(olive);
+    </script>
+    
+</body>
+</html>
