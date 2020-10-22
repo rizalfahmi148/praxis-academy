@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous</title>
+</head>
+<body>
+    <script>
+        // Async/await pattern. ada beberapa pattren untuk membuat async / await
+        //1.fungsi async anonim
+        // let main = (async function() {
+        //     let value = await doAsync();
+        // })();
+
+        // //2.deklarasi fungsi asinkron
+        // let main = async function() {
+        //     let value = await doAsync();
+        // };
+
+        // //3.penetapan fungsi asinkron
+        // let main = async () => {
+        //     let value = await doAsync();
+        // };
+
+        // //4.fungsi async sebagai argumen
+        // document.body.addEventListener('click', async function() {
+        //     let value = await doAsync();
+        // });
+
+        // //5.objek dan metode kelas
+        // let obj = {
+        //     async method() {
+        //         let value = await doAsync();
+        //     }
+        // };
+        // class MyClass {
+        //     async MyMethod() {
+        //         let value = await doAsync();
+        //     }
+        // }
+        // synchronous
+        console.log('Hallo')
+        console.log('My Name is')
+        console.log('Rizal Fahmi')
+
+        //Asynchronous
+        console.log('Hallo');
+        setTimeout(() => { console.log('how are you?')},100)
+        console.log('Rizal Fahmi');
+
+
+    </script>
+    
+</body>
+</html>
