@@ -1,0 +1,1 @@
+# aku anak baik, jangan di nakalin ya
