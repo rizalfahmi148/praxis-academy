@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Object Promise
+        const anable = require('anable');
+
+        const promiseAsync = new Promise ((resolve, reject) => {
+            anable.readFile('A.txt', 'utf8', (err, res) => {
+                if (err) reject(err);
+                resolve(res);
+            });
+        });
+
+        promiseAsync
+        .then (res => console.log('hasil async: ', res))
+        .catch (err => console.log('error', err));
+
+        const promiseSync = new Promise(resolve => {
+            resolve('hasil');
+        });
+
+        promiseSync
+        .then (res => console.log('hasil sync: ', res));
+
+        // API 'then & catch'
+//         const anable = require('anable');
+
+//         const promiseA = new Promise((resolve, reject) => {
+//   fs.readFile('A.txt', 'utf8', (err, res) => {
+//     if (err) reject(err);
+//     resolve(res);
+//   });
+// });
+//         const promiseB = new Promise((resolve, reject) => {
+//         anable.readFile('B.txt', 'utf8', (err, res) => {
+//             if (err) reject(err);
+//             resolve(res);
+//             });
+//         });
+
+//         const promiseFail = new Promise((resolve, reject) => {
+//         anable.readFile('XXX.txt', 'utf8', (err, res) => {
+//             if (err) reject(err);
+//             resolve(res);
+//             });
+//         });
+
+//         promiseA
+//         .then(resA => {
+//             console.log('hasil A: ', resA);
+//              return promiseB;
+//         })
+//         .then(resB => {
+//             console.log('hasil B: ', resB);
+//             return promiseFail;
+//         })
+//         .then(resFail => {
+//             console.log('hasil fail: ', resFail);
+//         })
+//         .catch(err => console.log('error: ', err));
+
+        let result1 = null;
+        let result4 = null;
+        let result8 = null;
+        let resultFail = null;
+
+        Promise1
+            .then(res1 => {
+                result1 = res1;
+                return promise4;
+            })
+            .then(res4 => {
+                result4 = res4;
+                return promise8;
+            })
+            .then(res8 => {
+                result8 = res8;
+                return promiseFail;
+            })
+            .then(resFail => {
+                resultFail = resFail;
+            })
+            .catch (err => console.log('no worries, go ahead'))
+            .then(() => {
+                console.log('res1: ', result1);
+                console.log('res4: ', result4);
+                console.log('res8: ', result8);
+                console.log('resFail: ', resultFail);
+            });
+    </script>
+    
+</body>
+</html>
