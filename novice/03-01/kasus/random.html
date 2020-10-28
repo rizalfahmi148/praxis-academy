@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: 5px;
+  background-color: yellowgreen;
+  padding: 5px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 12px;
+}
+
+.flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+</style>
+
+<script>
+let r = Math.round(Math.random()*25);
+let g = Math.round(Math.random()*25);
+let b = Math.round(Math.random()*25);
+
+function changeColor(){
+  for (const elem of document.querySelectorAll('div')) {
+    r = Math.round(Math.random()*25);
+    g = Math.round(Math.random()*25);
+    b = Math.round(Math.random()*25);
+    elem.style.backgroundColor =  "rgb("+r+","+g+","+b+", 0.8)";
+  }
+
+  let myTimer = setInterval(changeColor, 1000);
+  let running = true;
+}
+</script>
+
+</head>
+<body>
+
+<h1>Grid Layout</h1>
+
+<p>Tata letak kisi ini berisi enam kolom dan tiga baris:</p>
+
+<div class="flex-container">
+    <button onclick="changeColor()">OKE!</button>
+    <p id="timeinfo">TIME</p>
+</div>
+
+<div class="grid-container">
+  <div class="item1">Header</div>
+  <div class="item2">Menu</div>
+  <div class="item3">Main</div>  
+  <div class="item4">Right</div>
+  <div class="item5">Footer</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        .tema {
+            color: black;
+        }
+        .segipanjang {
+            width: 150px;
+            height: 150;
+            background-color:yellow;
+            border-radius: 3px;
+            box-shadow: 1px 2px 3px chartreuse;
+            margin: 1rem auto 2rem auto;
+            padding: 50px;
+        }
+        h1{
+            text-align: center;
+        }
+        p{
+            text-align:center;
+        }
+        body{
+            background: teal;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="segipanjang">
+        <h1 id="tema" class="tema">Bioskop Movie</h1>
+        <p>SEGERA TAYANG</p>
+        <p>Transformers</p>
+        <p>Stars Wars</p>
+        <p>Fast Furious 9</p>
+        <a href="http://Transmart.com">SEGERA TAYANG</a>
+    </div>
+    
+    <h1 id="tema" class="tema">Bioskop Movie</h1>
+    <!-- <button id="tampil">click oke</button> -->
+    <script>
+        let link = document.querySelector('a');
+        link.textContent = 'Segera Beli Ticketnya!Promo pengguna BCA Banking';
+        let root = document.querySelector('body');
+        let para = document.createElement('p');
+        para.textContent = 'Ini Film Baru';
+        root.appendChild(para);
+        console.log(para);
+    </script>
+</body>
+</html>

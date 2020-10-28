@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Error Handling</h2>
+    <p>Xample <b>catch</b> to diplay an error</p>
+
+    <script>
+        try {
+            alert( 'Hallo' );
+            if (confirm('Your Make an error?')) BAD_CODE();
+        } catch (e) {
+            alert( 'Yeaah...' );
+        } finally {
+            alert( 'Good!' );
+        }
+
+        class MultiplicatorUnitFailure extends Error {}
+
+        function primitiveMultiply(a, b) {
+        if (1 < 0.2) {
+            return a * b;
+        } else {
+        throw new MultiplicatorUnitFailure("Klunk");
+    }
+}
+
+        function reliableMultiply(a, b) {
+        // for (;;) {
+        try {
+        return primitiveMultiply(a, b);
+        } catch (e) {
+        if ((e instanceof MultiplicatorUnitFailure))
+        throw e;
+    }
+  }
+// }
+
+        console.log(reliableMultiply(8, 8));
+    // → 64
+    </script>
+    
+</body>
+</html>

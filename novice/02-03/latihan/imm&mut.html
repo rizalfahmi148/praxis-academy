@@ -14,12 +14,39 @@
         // console.log(newDate)
         // console.log(date)
 
-        // contoh cloning object
-        let date = {'name' : 'rizal fahmi', 'city' : 'lampung' }
+        // contoh cloning object dengan objek assign
+        let date = {'name' : 'rizalfahmi', 'city' : 'lampung'}
         let newDate = date
         newDate.name= 'rizalfahmi'
         console.log(newDate)
         console.log(date)
+
+        //contoh cloning objek dengan spread. lebih simple menggunakan operator (tiga titik)
+        let date = {'name' : 'rizalfahmi', 'city' : 'lampung'}
+        let newDate = {...date}
+        newDate.name= 'rizalfahmi'
+        let newDate = {...date,name : 'rizalfahmi'}
+
+        // contoh mutable cloning array
+        const numbers =[1,2,3]
+        const newNumbers = numbers
+        newNumbers.push(4,5)
+        console.log(numbers) // [1,2,3,4,5]
+        console.log(newNumbers)
+
+        // contoh immutable cloning array
+        const numbers =[1,2,3]
+        const newNumbers = [].concat(numbers).concat(4,5)
+        newNumbers.push(4)
+        console.log(numbers) // [1,2,3,4]
+        console.log(newNumbers) // [1,2,3,4]
+        console.log(numbers === newNumbers)
+
+        // contoh immutable cloning array dengan ES6. lebih simple 
+        const numbers =[1,2,3]
+        const newNumbers = [...numbers,4,5]
+        console.log(numbers) // [1, 2, 3]
+        console.log(newNumbers) // [1, 2, 3, 4, 5]
     </script>
     
 </body>
